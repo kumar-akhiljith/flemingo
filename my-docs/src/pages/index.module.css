@@ -1,0 +1,51 @@
+.heroContainer {
+  background: #111;
+  padding: 6rem 0;
+  text-align: left;
+  border-bottom: 1px solid #222;
+}
+
+.heroContent {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  color: #e5e5e5;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.heroSubtitle {
+  color: #9ba3af;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.buttons {
+  margin-top: 2rem;
+}
+
+.ctaButton {
+  background-color: #3a76f0;
+  color: white;
+  border-radius: 6px;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease-in-out;
+}
+
+.ctaButton:hover {
+  background-color: #315fcc;
+  text-decoration: none;
+}
+
+.mainSection {
+  background: #121212;
+  padding: 4rem 0;
+}
