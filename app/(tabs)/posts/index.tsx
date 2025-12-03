@@ -1,5 +1,5 @@
 import { Text } from "react-native";
 
 export default function Screen() {
-  return <Text>Chats</Text>;
+  return <Text>Posts</Text>;
 }
