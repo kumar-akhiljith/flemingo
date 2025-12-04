@@ -21,7 +21,7 @@ This page describes how to clone the project, install dependencies, configure es
 ## 1. Clone the Repository
 ```bash
 
-git clone https://github.com/YOUR_GITHUB_USERNAME/flemingo.git
+git clone https://github.com/kumar-akhiljith/flemingo.git
 cd flemingo
 ```
 

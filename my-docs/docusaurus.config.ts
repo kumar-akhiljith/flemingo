@@ -16,7 +16,7 @@ const config: Config = {
 
   baseUrl: '/',
 
-  organizationName: 'YOUR_GITHUB_USERNAME',
+  organizationName: 'kumar-akhiljith',
   projectName: 'flemingo',
 
   onBrokenLinks: 'throw',
@@ -33,7 +33,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/YOUR_GITHUB_USERNAME/flemingo/tree/main/',
+          editUrl: 'https://github.com/kumar-akhiljith/flemingo/tree/main/',
         },
 
         blog: false,
@@ -67,7 +67,7 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          href: 'https://github.com/YOUR_GITHUB_USERNAME/flemingo',
+          href: 'https://github.com/kumar-akhiljith/flemingo',
           label: 'GitHub',
           position: 'right',
         },
@@ -80,7 +80,7 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            { label: 'GitHub Issues', href: 'https://github.com/YOUR_GITHUB_USERNAME/flemingo/issues' },
+            { label: 'GitHub Issues', href: 'https://github.com/kumar-akhiljith/flemingo/issues' },
           ],
         },
       ],

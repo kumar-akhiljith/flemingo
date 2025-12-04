@@ -1,21 +1,27 @@
 import { Tabs } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
 
 export default function TabsLayout() {
   return (
-    <Tabs screenOptions={{ headerShown: false }}>
+    <Tabs screenOptions={{ headerShown: true }}>
       <Tabs.Screen 
-        name="chats" 
+        name="chats/index" 
         options={{ 
-          title: "chats",
-          tabBarIcon: ({ color, size }) => <Ionicons name="chatbubble-outline" color={color} size={size} />
+          title: "Chats",
+          tabBarLabel: "Chats",
         }} 
       />
       <Tabs.Screen 
-        name="settings" 
+        name="contacts/index" 
+        options={{ 
+          title: "Contacts",
+          tabBarLabel: "Contacts",
+        }} 
+      />
+      <Tabs.Screen 
+        name="settings/index" 
         options={{ 
           title: "Settings",
-          tabBarIcon: ({ color, size }) => <Ionicons name="settings-outline" color={color} size={size} />
+          tabBarLabel: "Settings",
         }} 
       />
     </Tabs>
