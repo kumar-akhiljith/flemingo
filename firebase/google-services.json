@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "840904780176",
+    "project_id": "flemingo-8ecf9",
+    "storage_bucket": "flemingo-8ecf9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840904780176:android:6abdcc221edcc255ee2b15",
+        "android_client_info": {
+          "package_name": "app.flemingo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACIxErM1flnirROfDB0ynPyBL51gqF2dY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
