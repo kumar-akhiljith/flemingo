@@ -5,16 +5,12 @@ import * as SecureStore from 'expo-secure-store';
 import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
-// --- CONFIGURATION & UTILITIES ---
 const WEB_CLIENT_ID = 'YOUR_GOOGLE_WEB_CLIENT_ID.apps.googleusercontent.com';
-const AuthContext = createContext(undefined); // Removed the interface type
+const AuthContext = createContext(undefined);
 const TOKEN_KEY = 'flemingo_jwt';
 
-// Helper functions (removed Promise<void> and type annotations)
-// ... saveToken, getToken, removeToken functions remain the same logic ...
-
 // 2. The Auth Provider Component
-export const AuthProvider = ({ children }) => { // Removed : { children: ReactNode }
+export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [jwt, setJwt] = useState(null);
   const [loading, setLoading] = useState(true);
