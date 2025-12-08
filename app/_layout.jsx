@@ -1,5 +1,5 @@
-import { Stack, Redirect } from "expo-router"; 
-import { useColorScheme, View } from 'react-native';
+import { Stack } from "expo-router";
+import { useColorScheme } from 'react-native';
 // import { AuthProvider, useAuth } from '../providers/AuthProvider';
 
 export default function RootLayout() {
@@ -7,6 +7,7 @@ export default function RootLayout() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
     </Stack>
   );
 }

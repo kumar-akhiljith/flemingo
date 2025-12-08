@@ -1,9 +1,6 @@
-// app/(tabs)/_layout.tsx (The Final, Cleaned Version)
-
+import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import { Ionicons } from "@expo/vector-icons"; 
 
-import React from 'react';
 
 const SIGNAL_GREEN_HEX = '#3AB54B'; 
 const TAB_BAR_BACKGROUND = '#f7f7f7';

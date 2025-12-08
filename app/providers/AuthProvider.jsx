@@ -1,5 +1,3 @@
-// providers/AuthProvider.jsx
-
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import * as SecureStore from 'expo-secure-store';
 import auth from '@react-native-firebase/auth';
@@ -39,27 +37,37 @@ export const AuthProvider = ({ children }) => {
 
   // --- CORE AUTH FUNCTIONS ---
 
-  async function signInWithGoogle() { // Removed : Promise<void>
-    setLoading(true);
-    try {
-      // ... Google Sign-In and Firebase logic ...
-      
-      const response = await GoogleSignin.signIn(); 
-      const { idToken } = response; // This line should no longer throw the TS error!
-      
-      if (!idToken) throw new Error("Google sign-in failed: No ID Token received.");
+async function signInWithGoogle() {
+  setLoading(true);
+  try {
+    const response = await GoogleSignin.signIn(); 
+    const { idToken } = response;
+    
+    // 1. Sign in to Firebase locally to get the verified passport
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+    const userCredential = await auth().signInWithCredential(googleCredential);
+    const firebaseIdToken = await userCredential.user.getIdToken();
 
-      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-      await auth().signInWithCredential(googleCredential);
+    // 2. Call your NEW backend endpoint
+    // Replace BASE_URL with your machine's local IP or domain
+    const apiResponse = await axios.post(`${BASE_URL}/auth/login-google`, { 
+        idToken: firebaseIdToken 
+    });
 
-      // ... rest of your backend exchange logic ...
+    const { token, user: returnedUser } = apiResponse.data;
 
-    } catch (error) { // Removed : any
-      // ... error handling ...
-    } finally {
-      setLoading(false);
-    }
+    // 3. Store the JWT securely in Expo SecureStore
+    await SecureStore.setItemAsync('flemingo_jwt', token);
+    
+    setJwt(token);
+    setUser(returnedUser);
+
+  } catch (error) {
+    console.error("Login full flow failed:", error);
+  } finally {
+    setLoading(false);
   }
+}
 
 
   async function signOut() { /* ... logic ... */ }
