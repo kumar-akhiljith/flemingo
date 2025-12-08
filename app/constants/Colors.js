@@ -1,6 +1,6 @@
 export default {
   // Brand Colors (Kept)
-  primary: '#EF7D8B', 
+  primary: '#DEFF3C', 
   secondary: '#ffe7eaff', 
 
   // Core Dark Theme Colors

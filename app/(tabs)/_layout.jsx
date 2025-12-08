@@ -2,8 +2,8 @@ import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 
 
-const SIGNAL_GREEN_HEX = '#3AB54B'; 
-const TAB_BAR_BACKGROUND = '#f7f7f7';
+const SIGNAL_GREEN_HEX = '#DEFF3C'; 
+const TAB_BAR_BACKGROUND = '#121212';
 
 export default function TabsLayout() {
   return (
@@ -13,28 +13,18 @@ export default function TabsLayout() {
         tabBarActiveTintColor: SIGNAL_GREEN_HEX, 
         tabBarStyle: {
           backgroundColor: TAB_BAR_BACKGROUND,
-          borderTopColor: 'rgb(230, 230, 230)',
+          borderTopColor: TAB_BAR_BACKGROUND,
           borderTopWidth: 1, 
         },
       }}
     >
       <Tabs.Screen 
-        name="chats/index" 
+        name="rentals/index" 
         options={{ 
-          title: "Chats",
-          tabBarLabel: "Chats",
+          title: "Rentals",
+          tabBarLabel: "Rentals",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="chatbubble-ellipses-outline" size={size} color={color} />
-          ),
-        }} 
-      />
-      <Tabs.Screen 
-        name="contacts/index" 
-        options={{ 
-          title: "Contacts",
-          tabBarLabel: "Contacts",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="people-outline" size={size} color={color} />
+            <Ionicons name="home-outline" size={size} color={color} />
           ),
         }} 
       />

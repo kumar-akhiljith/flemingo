@@ -1,29 +1,35 @@
 import { Link } from "expo-router";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import welcomeImage from "../assets/images/flamingo_index.png";
+import {
+  useSafeAreaInsets,
+} from 'react-native-safe-area-context';
+import welcomeImage from "../assets/images/welcome_house.png";
+import Colors from "./constants/Colors";
 
 const welcome_image_uri = Image.resolveAssetSource(welcomeImage).uri;
 
 export default function IndexPage() {
   // return <Redirect href="/(tabs)/chats" />;
+  const { top, bottom } = useSafeAreaInsets();
+
   return (
-    <View style={styles.container}>
+    <View style={[
+        styles.container
+        , { paddingTop: top, paddingBottom: bottom }
+    ]}>
       <Image 
         source={{ uri: welcome_image_uri }} 
         style={styles.welcome_image} 
       />
-      <Text style={styles.headline}>Welcome to Flamingo!</Text>
-      {/* <Text style={styles.description}>
-          Read our{' '}
-          <Text style={styles.link}>
-            Privacy Policy
-          </Text>{' '}
-          and{' '}
-          <Text style={styles.link}>
-            Terms of Service
-          </Text>
-      </Text> */}
-      <Link href="/(auth)/login" asChild>
+      <Text style={styles.headline}>Welcome!</Text>
+      <View style={{ flex: 1 }}>
+
+      </View>
+      <Text style={styles.description}>
+          WhatsApp groups don't reach everyone. {"\n"}
+          Share your vacant room in one place — for free and without hassle.
+      </Text>
+      <Link href="/rentals" asChild  style={{ marginBottom: bottom }}>
         <TouchableOpacity style={styles.button}> 
           <Text style={styles.buttonText}>Get Started</Text>
         </TouchableOpacity>
@@ -38,32 +44,44 @@ const styles = StyleSheet.create({
     padding: 20, 
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: Colors.background,
   },
   welcome_image: {
     width: '100%',
-    height: 300,
+    height: 200,
     resizeMode: 'contain',
     marginBottom: 80,
+    marginTop: 100,
   },
   headline: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    color: Colors.text,
   },
   description: {
     fontSize: 16,
     textAlign: 'center',
-    color: '#666',
+    color: Colors.text,
   },
   button: {
     marginTop: 30,
     fontSize: 18,
-    backgroundColor: '#EF7D8B',
-    color: '#FFFFFF',
+    backgroundColor: Colors.primary,
+    color: Colors.text,
     padding: 10,
     width: '100%',
     textAlign: 'center',
     borderRadius: 5,
+    //  styles for shadow
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+  },
+  buttonText: {
+    textAlign: 'center',
+    fontSize: 18,
   },
 });

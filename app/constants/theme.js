@@ -1,5 +1,6 @@
 //  This is the theme used by docusaurus documentation
 
+
 import { Platform } from 'react-native';
 
 const tintColorLight = '#0a7ea4';
