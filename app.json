@@ -11,6 +11,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.akhiljith114.flemingo",
+      "googleServicesFile": "./GoogleService-Info.plist",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
@@ -41,7 +42,6 @@
         {
           "iosClientId": "840904780176-aaftskf7equcqr34ie18cs0f6bos7ts1.apps.googleusercontent.com",
           "iosUrlScheme": "com.googleusercontent.apps.840904780176-aaftskf7equcqr34ie18cs0f6bos7ts1"
-          // Note: The Android config is usually derived from google-services.json
         }
       ],
       [

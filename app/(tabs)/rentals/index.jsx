@@ -8,6 +8,7 @@ import {
     View
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import LoginButton from "../../components/button/LoginButton";
 
 const MOCK_RENTALS = [
   {
@@ -138,6 +139,7 @@ const RentalCard = ({ item }) => (
 );
 
 export default function RentalFeed() {
+
   const insets = useSafeAreaInsets();
   return (
     <SafeAreaView style={styles.container}>
@@ -145,8 +147,9 @@ export default function RentalFeed() {
       <View style={[styles.headerContainer, { paddingTop: insets.top }]}>
         <Text style={styles.screenTitle}>Renting</Text>
         <View style={styles.userProfilePlaceholder}>
-           <Text style={styles.userName}>User name</Text>
-           <View style={styles.avatarCircle} />
+           {/* <Text style={styles.userName}>User name</Text> */}
+           <LoginButton />
+           {/* <View style={styles.avatarCircle} /> */}
         </View>
       </View>
 
